@@ -1,4 +1,4 @@
-extern crate q1tsim; // q1tsim kütüphanesi dışarıdan kullanılıyor
+extern crate q1tsim; 
 use q1tsim::{circuit, gates};
 use std::io;
 
@@ -8,13 +8,13 @@ fn main() {
     let mut input1 = String::new();
     let mut input2 = String::new();
 
-    println!("Kullanmak istediğiniz elektron sayısını giriniz:");
-    io::stdin().read_line(&mut input1).expect("Giriş okunamadı.");
-    println!("Kaç adet dolanık elektron yapmak istiyorsunuz:");
-    io::stdin().read_line(&mut input2).expect("Giriş okunamadı.");
+    println!("Enter the number of electrons you want to use:");
+    io::stdin().read_line(&mut input1).expect("The entry could not be read.");
+    println!("How many entangled electrons do you want to make:");
+    io::stdin().read_line(&mut input2).expect("The entry could not be read.");
 
-    electron_num = input1.trim().parse().expect("Geçersiz sayı");
-    entangled_electron = input2.trim().parse().expect("Geçersiz sayı");
+    electron_num = input1.trim().parse().expect("Invalid number");
+    entangled_electron = input2.trim().parse().expect("Invalid number");
 
     let mut circuit = circuit::Circuit::new(entangled_electron, entangled_electron);
 
